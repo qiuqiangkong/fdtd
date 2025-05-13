@@ -143,8 +143,8 @@ if __name__ == "__main__":
     data = sim.simulate()
 
     # Print
-    u = data["u"]  # (t, Nx, Ny)
-    bound = data["boundary"]
+    u = data["u"]  # (t, x, y)
+    bound = data["boundary"]  # (x, y)
     print("Sound field shape: {}".format(u.shape))
 
     # Write video for visualization
