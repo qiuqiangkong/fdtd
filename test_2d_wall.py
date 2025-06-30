@@ -1,5 +1,6 @@
 import numpy as np
 import random
+import time
 
 
 class FDTD2D:
@@ -126,7 +127,7 @@ def visualize(x: np.ndarray, bound: np.ndarray) -> None:
     ani = animation.FuncAnimation(fig, func=update, frames=frames, interval=20)
     writer = animation.FFMpegWriter(fps=24, bitrate=5000)
 
-    out_path = "_zz.mp4"
+    out_path = "out.mp4"
     ani.save(out_path, writer=writer)
     print("Write sound filed MP4 to {}".format(out_path))
 
@@ -140,12 +141,15 @@ if __name__ == "__main__":
     sim = FDTD2D(duration=0.1, verbose=True)
 
     # Simulate
+    t = time.time()
     data = sim.simulate()
+    simulation_time = time.time() - t
 
     # Print
     u = data["u"]  # (t, x, y)
     bound = data["boundary"]  # (x, y)
     print("Sound field shape: {}".format(u.shape))
+    print("Simulation time: {:.2f} s".format(simulation_time))
 
     # Write video for visualization
     visualize(u, bound)
