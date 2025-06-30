@@ -5,7 +5,7 @@ This is a toy example of 2D online Finite-Difference Time-Domain (FDTD) generato
 ## Run
 
 ```python
-python test_2d_wall.py
+python fdtd_2d.py
 ```
 
 ## Results
