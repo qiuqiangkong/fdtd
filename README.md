@@ -15,3 +15,6 @@ Sound field shape: (103, 100, 100)
 Simulation time: 0.21
 Write sound filed MP4 to out.mp4
 </pre>
+
+https://github.com/user-attachments/assets/d62cb731-f2a9-489b-8657-4934e9b868b5
+
